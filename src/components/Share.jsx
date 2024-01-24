@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 // import { useEffect } from 'react';
+import { useEffect } from "react";
 import {
     FacebookShareButton,
     TwitterShareButton,
@@ -7,30 +8,12 @@ import {
     FacebookIcon,
 } from "react-share";
 import { Helmet } from 'react-helmet-async';
-import { useEffect } from "react";
-// import { Helmet } from 'react-helmet';
-// import { Helmet } from 'react-helmet-async';
 
 const Share = ({ title, description, img, url }) => {
     useEffect(() => {
-        <Helmet>
-            {/* <title>Excited to Share: my achievement</title> */}
-            <meta property="og:title" content={title} />
-            <meta property="og:type" content="article" />
-            <meta property="og:description" content={description} />
-            <meta property="og:image" content={img} />
-            <meta property="og:url" content={url} />
-            <meta property="og:image:width" content="1200" />
-            <meta property="og:image:height" content="630" />
-
-        </Helmet>
-        // Use Helmet here if you need to dynamically update meta tags after the initial load
-    }, [title, description, img, url]);
-
-    return (
-        <div>
+        const helmet = (
             <Helmet>
-                {/* <title>Excited to Share: my achievement</title> */}
+                <title>{title}</title>
                 <meta property="og:title" content={title} />
                 <meta property="og:type" content="article" />
                 <meta property="og:description" content={description} />
@@ -38,20 +21,33 @@ const Share = ({ title, description, img, url }) => {
                 <meta property="og:url" content={url} />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
-
             </Helmet>
-            <FacebookShareButton url="https://superlative-bunny-c61262.netlify.app/">
+        );
+
+        // Update the meta tags
+        const head = document.querySelector("head");
+        head.innerHTML += helmet.props.children;
+
+        // Remove the added meta tags when the component unmounts
+        return () => {
+            head.removeChild(head.lastChild);
+        };
+    }, [title, description, img, url]);
+
+    return (
+        <div>
+            <FacebookShareButton url={url}>
                 <FacebookIcon sx={{ fontSize: 65 }} />
             </FacebookShareButton>
-            <TwitterShareButton url="https://superlative-bunny-c61262.netlify.app/">
+            <TwitterShareButton url={url}>
                 <TwitterIcon sx={{ fontSize: 65 }} />
             </TwitterShareButton>
-
-
         </div>
-    )
-}
-export default Share
+    );
+};
+
+export default Share;
+
 
 
 
