@@ -6,7 +6,7 @@ function App() {
   
   return (
     <HelmetProvider>
-      <h1>Hello World</h1>
+      <h1>Hello React World</h1>
       <Share />
     </HelmetProvider>
   )
