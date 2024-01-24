@@ -1,4 +1,3 @@
-// import logo from "../public/preprLogo2.png";
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -12,7 +11,6 @@ function App() {
       <FacebookShareButton url="https://superlative-bunny-c61262.netlify.app/">
         <FacebookIcon sx={{ fontSize: 65 }} />
       </FacebookShareButton>
-      {/* <img src={logo} /> */}
     </>
   )
 }
