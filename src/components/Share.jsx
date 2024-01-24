@@ -11,7 +11,7 @@ import {
 
 const Share = () => {
     useEffect(() => {
-        window.onload = () => {
+        document.addEventListener('DOMContentLoaded', () => {
             // Create or update Open Graph meta tags
             const ogTitle = document.querySelector('meta[property="og:title"]');
             if (ogTitle) {
@@ -25,15 +25,14 @@ const Share = () => {
 
             const ogImage = document.querySelector('meta[property="og:image"]');
             if (ogImage) {
-                ogImage.setAttribute('content', "https://superlative-bunny-c61262.netlify.app/preprLogo2.png");
+                ogImage.setAttribute('content', "https://superlative-bunny-c61262.netlify.app/preprLogo2.png" );
             }
 
             const ogUrl = document.querySelector('meta[property="og:url"]');
             if (ogUrl) {
-                ogUrl.setAttribute('content', "https://superlative-bunny-c61262.netlify.app/");
+                ogUrl.setAttribute('content', "https://superlative-bunny-c61262.netlify.app/" );
             }
-        };
-
+        });
     }, []);
 
     return (
