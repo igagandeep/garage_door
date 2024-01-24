@@ -13,7 +13,7 @@ function App() {
       <FacebookShareButton url="https://superlative-bunny-c61262.netlify.app/">
         <FacebookIcon sx={{ fontSize: 65 }} />
       </FacebookShareButton>
-      <TwitterShareButton>
+      <TwitterShareButton url="https://superlative-bunny-c61262.netlify.app/">
         <TwitterIcon sx={{ fontSize: 65}} url="https://superlative-bunny-c61262.netlify.app/" />
       </TwitterShareButton>
     </>
