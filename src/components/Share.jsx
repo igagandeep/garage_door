@@ -5,6 +5,7 @@ import {
     TwitterIcon,
     FacebookIcon,
 } from "react-share";
+import { Helmet } from 'react-helmet-async';
 // import { Helmet } from 'react-helmet';
 // import { Helmet } from 'react-helmet-async';
 
@@ -12,9 +13,21 @@ const Share = () => {
 
     return (
         <div>
-            {/* <Helmet>
-          
-            </Helmet> */}
+            <Helmet>
+                <title>Excited to Share: my achievement</title>
+                <meta property="og:title" content="Excited to Share: my achievement" />
+                <meta property="og:type" content="article" />
+                <meta property="og:description" content="this is my decription" />
+                <meta property="og:image" content="https://i.ibb.co/N2fppGk/logo3.png" />
+                <meta property="og:url" content="https://superlative-bunny-c61262.netlify.app/" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+
+                <meta name="twitter:creator" content="guru" />
+                <meta name="twitter:card" content="article" />
+                <meta name="twitter:title" content="Excited to Share: my achievement" />
+                <meta name="twitter:description" content="this is my description" />
+            </Helmet>
             <FacebookShareButton url="https://superlative-bunny-c61262.netlify.app/">
                 <FacebookIcon sx={{ fontSize: 65 }} />
             </FacebookShareButton>
@@ -79,27 +92,27 @@ export default Share
                 <meta property="twitter:image" content={item.img} /> */}
 
 
-                    // useEffect(() => {
-    //     document.addEventListener('DOMContentLoaded', () => {
-    //         // Create or update Open Graph meta tags
-    //         const ogTitle = document.querySelector('meta[property="og:title"]');
-    //         if (ogTitle) {
-    //             ogTitle.setAttribute('content', `Excited to Share: my achievement`);
-    //         }
+// useEffect(() => {
+//     document.addEventListener('DOMContentLoaded', () => {
+//         // Create or update Open Graph meta tags
+//         const ogTitle = document.querySelector('meta[property="og:title"]');
+//         if (ogTitle) {
+//             ogTitle.setAttribute('content', `Excited to Share: my achievement`);
+//         }
 
-    //         const ogDescription = document.querySelector('meta[property="og:description"]');
-    //         if (ogDescription) {
-    //             ogDescription.setAttribute('content', `Check out my achievement.`);
-    //         }
+//         const ogDescription = document.querySelector('meta[property="og:description"]');
+//         if (ogDescription) {
+//             ogDescription.setAttribute('content', `Check out my achievement.`);
+//         }
 
-    //         const ogImage = document.querySelector('meta[property="og:image"]');
-    //         if (ogImage) {
-    //             ogImage.setAttribute('content', "https://superlative-bunny-c61262.netlify.app/preprLogo2.png");
-    //         }
+//         const ogImage = document.querySelector('meta[property="og:image"]');
+//         if (ogImage) {
+//             ogImage.setAttribute('content', "https://superlative-bunny-c61262.netlify.app/preprLogo2.png");
+//         }
 
-    //         const ogUrl = document.querySelector('meta[property="og:url"]');
-    //         if (ogUrl) {
-    //             ogUrl.setAttribute('content', "https://superlative-bunny-c61262.netlify.app/");
-    //         }
-    //     });
-    // }, []);
+//         const ogUrl = document.querySelector('meta[property="og:url"]');
+//         if (ogUrl) {
+//             ogUrl.setAttribute('content', "https://superlative-bunny-c61262.netlify.app/");
+//         }
+//     });
+// }, []);
