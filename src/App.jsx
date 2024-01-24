@@ -1,5 +1,7 @@
 import {
   FacebookShareButton,
+  TwitterShareButton,
+  TwitterIcon,
   FacebookIcon,
 } from "react-share";
 
@@ -11,6 +13,9 @@ function App() {
       <FacebookShareButton url="https://superlative-bunny-c61262.netlify.app/">
         <FacebookIcon sx={{ fontSize: 65 }} />
       </FacebookShareButton>
+      <TwitterShareButton>
+        <TwitterIcon sx={{ fontSize: 65}} url="https://superlative-bunny-c61262.netlify.app/" />
+      </TwitterShareButton>
     </>
   )
 }
