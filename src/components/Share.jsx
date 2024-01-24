@@ -25,19 +25,19 @@ const Share = () => {
 
             const ogImage = document.querySelector('meta[property="og:image"]');
             if (ogImage) {
-                ogImage.setAttribute('content', "https://superlative-bunny-c61262.netlify.app/preprLogo2.png" );
+                ogImage.setAttribute('content', "https://superlative-bunny-c61262.netlify.app/preprLogo2.png");
             }
 
             const ogUrl = document.querySelector('meta[property="og:url"]');
             if (ogUrl) {
-                ogUrl.setAttribute('content', "https://superlative-bunny-c61262.netlify.app/" );
+                ogUrl.setAttribute('content', "https://superlative-bunny-c61262.netlify.app/");
             }
         });
     }, []);
 
     return (
         <div>
-
+            <h1>Hello</h1>
             <FacebookShareButton url="https://superlative-bunny-c61262.netlify.app/">
                 <FacebookIcon sx={{ fontSize: 65 }} />
             </FacebookShareButton>
