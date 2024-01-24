@@ -1,15 +1,39 @@
+import { useEffect } from 'react';
 import {
     FacebookShareButton,
     TwitterShareButton,
     TwitterIcon,
     FacebookIcon,
 } from "react-share";
-import { Helmet } from 'react-helmet';
+// import { Helmet } from 'react-helmet';
 
 
 
 const Share = () => {
+    useEffect(() => {
+        // Create or update Open Graph meta tags
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) {
+            ogTitle.setAttribute('content', `Excited to Share: my achieveemnt`);
+        }
 
+        const ogDescription = document.querySelector('meta[property="og:description"]');
+        if (ogDescription) {
+            ogDescription.setAttribute('content', `Check out my achievement.`);
+        }
+
+        const ogImage = document.querySelector('meta[property="og:image"]');
+        if (ogImage) {
+            ogImage.setAttribute('content', "https://superlative-bunny-c61262.netlify.app/preprLogo2.png" );
+        }
+
+        const ogUrl = document.querySelector('meta[property="og:url"]');
+        if (ogUrl) {
+            ogUrl.setAttribute('content', "https://superlative-bunny-c61262.netlify.app/" );
+        }
+
+        // Add more Open Graph meta tags as needed
+    }, []);
     // const item = {
     //     name: "Demo",
     //     img: "https://superlative-bunny-c61262.netlify.app/preprLogo2.png"
@@ -17,7 +41,7 @@ const Share = () => {
 
     return (
         <div>
-
+{/* 
 <Helmet>
 
 
@@ -47,7 +71,7 @@ const Share = () => {
 <meta property="og:site_name" content="DSite name" />
 <meta property="og:description" content="This is so cool" />
 </Helmet>
-         
+          */}
 {/* 
 
                 <meta name="description" content="We helps people to educate, learn" />
