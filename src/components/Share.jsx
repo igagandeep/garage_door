@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // import { useEffect } from 'react';
 import {
     FacebookShareButton,
@@ -6,27 +7,38 @@ import {
     FacebookIcon,
 } from "react-share";
 import { Helmet } from 'react-helmet-async';
+import { useEffect } from "react";
 // import { Helmet } from 'react-helmet';
 // import { Helmet } from 'react-helmet-async';
 
-const Share = () => {
+const Share = ({ title, description, img, url }) => {
+    useEffect(() => {
+        <Helmet>
+            {/* <title>Excited to Share: my achievement</title> */}
+            <meta property="og:title" content={title} />
+            <meta property="og:type" content="article" />
+            <meta property="og:description" content={description} />
+            <meta property="og:image" content={img} />
+            <meta property="og:url" content={url} />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
+
+        </Helmet>
+        // Use Helmet here if you need to dynamically update meta tags after the initial load
+    }, [title, description, img, url]);
 
     return (
         <div>
             <Helmet>
-                <title>Excited to Share: my achievement</title>
-                <meta property="og:title" content="Excited to Share: my achievement" />
+                {/* <title>Excited to Share: my achievement</title> */}
+                <meta property="og:title" content={title} />
                 <meta property="og:type" content="article" />
-                <meta property="og:description" content="this is my decription" />
-                <meta property="og:image" content="https://i.ibb.co/N2fppGk/logo3.png" />
-                <meta property="og:url" content="https://superlative-bunny-c61262.netlify.app/" />
+                <meta property="og:description" content={description} />
+                <meta property="og:image" content={img} />
+                <meta property="og:url" content={url} />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
 
-                <meta name="twitter:creator" content="guru" />
-                <meta name="twitter:card" content="article" />
-                <meta name="twitter:title" content="Excited to Share: my achievement" />
-                <meta name="twitter:description" content="this is my description" />
             </Helmet>
             <FacebookShareButton url="https://superlative-bunny-c61262.netlify.app/">
                 <FacebookIcon sx={{ fontSize: 65 }} />
