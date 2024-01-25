@@ -1,27 +1,17 @@
-import {
-    FacebookShareButton,
-    TwitterShareButton,
-    TwitterIcon,
-    FacebookIcon,
-    LinkedinIcon
-} from "react-share";
 
 const Share = () => {
 
-    let url = "https://superlative-bunny-c61262.netlify.app/share";
+    let url = encodeURIComponent("https://superlative-bunny-c61262.netlify.app/share");
 
     return (
         <div>
             <h2>Share Social</h2>
-            <FacebookShareButton url={url}>
-                <FacebookIcon sx={{ fontSize: 65 }} />
-            </FacebookShareButton>
-            <TwitterShareButton url={url}>
-                <TwitterIcon sx={{ fontSize: 65 }} />
-            </TwitterShareButton>
+      
             <a target='_blank' className='c-black' rel="noreferrer" href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`}>
-                <LinkedinIcon sx={{ fontSize: 65 }} />
+                Share on Linkedin
             </a>
+
+            
         </div>
     );
 };
@@ -29,6 +19,20 @@ const Share = () => {
 export default Share;
 
 
+// <FacebookShareButton url={url}>
+// <FacebookIcon sx={{ fontSize: 65 }} />
+// </FacebookShareButton>
+// <TwitterShareButton url={url}>
+// <TwitterIcon sx={{ fontSize: 65 }} />
+// </TwitterShareButton>
+
+// import {
+//     FacebookShareButton,
+//     TwitterShareButton,
+//     TwitterIcon,
+//     FacebookIcon,
+//     LinkedinIcon
+// } from "react-share";
 
 
 {/* 

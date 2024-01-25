@@ -17,6 +17,7 @@
     "react-helmet-async": "^2.0.4",
     "react-router-dom": "^6.21.3",
     "react-share": "^5.0.3",
+    "react-share-linkedin": "^1.0.0",
     "react-share-lite": "^1.1.0",
     "react-share-social": "^0.1.55",
     "sharethis-reactjs": "^1.6.0"
