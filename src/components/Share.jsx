@@ -1,7 +1,7 @@
 
 const Share = () => {
 
-    let url = encodeURIComponent("https://superlative-bunny-c61262.netlify.app");
+    let url = encodeURIComponent("https://superlative-bunny-c61262.netlify.app/share");
 
     return (
         <div>
