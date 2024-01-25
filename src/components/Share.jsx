@@ -1,48 +1,27 @@
-/* eslint-disable react/prop-types */
-// import { useEffect } from 'react';
-import { useEffect } from "react";
 import {
     FacebookShareButton,
     TwitterShareButton,
     TwitterIcon,
     FacebookIcon,
+    LinkedinIcon
 } from "react-share";
-import { Helmet } from 'react-helmet-async';
 
-const Share = ({ title, description, img, url }) => {
-    useEffect(() => {
-        const helmet = (
-            <Helmet>
-                <title>{title}</title>
-                <meta property="og:title" content={title} />
-                <meta property="og:type" content="article" />
-                <meta property="og:description" content={description} />
-                <meta property="og:image" content={img} />
-                <meta property="og:url" content={url} />
-                <meta property="og:image:width" content="1200" />
-                <meta property="og:image:height" content="630" />
-            </Helmet>
-        );
+const Share = () => {
 
-        // Update the meta tags
-        const head = document.querySelector("head");
-        head.innerHTML += helmet.props.children;
-
-        // Remove the added meta tags when the component unmounts
-        return () => {
-            head.removeChild(head.lastChild);
-        };
-    }, [title, description, img, url]);
+    let url = "https://superlative-bunny-c61262.netlify.app/share";
 
     return (
         <div>
-            <h2>ddd</h2>
+            <h2>Share Social</h2>
             <FacebookShareButton url={url}>
                 <FacebookIcon sx={{ fontSize: 65 }} />
             </FacebookShareButton>
             <TwitterShareButton url={url}>
                 <TwitterIcon sx={{ fontSize: 65 }} />
             </TwitterShareButton>
+            <a target='_blank' className='c-black' rel="noreferrer" href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`}>
+                <LinkedinIcon sx={{ fontSize: 65 }} />
+            </a>
         </div>
     );
 };
