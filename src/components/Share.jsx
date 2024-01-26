@@ -1,7 +1,7 @@
 
 const Share = () => {
 
-    let url = encodeURIComponent("https://superlative-bunny-c61262.netlify.app/share");
+    let url = encodeURIComponent("https://dev.learnlab.ai/achievements/2401020001");
 
     return (
         <div>
