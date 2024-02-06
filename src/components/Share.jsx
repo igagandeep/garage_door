@@ -1,11 +1,9 @@
 
 const Share = () => {
 
-    function fixedEncodeURIComponent(str) {
-        return encodeURIComponent(str).replace(/[!'()*]/g, function(c) {
-          return '%' + c.charCodeAt(0).toString(16);
-        });
-      }
+    function fixedEncodeURIComponent(str){
+        return encodeURIComponent(str).replace(/[!'()]/g, escape).replace(/\*/g, "%2A");
+    }
 
 
     let url = fixedEncodeURIComponent("https://superlative-bunny-c61262.netlify.app/share");

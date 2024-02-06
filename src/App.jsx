@@ -1,22 +1,19 @@
+import { Container } from 'react-bootstrap';
+import { Outlet } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Header from './components/Header';
 
-import Share from './components/Share';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-} from 'react-router-dom';
-
-function App() {
+const App = () => {
   return (
-    <Router>
-      <h1>Hello React World</h1>
-      <Link to="/share">Share</Link>
-      <Routes>
-        <Route path="/share" element={<Share />} />
-      </Routes>
-    </Router>
-  )
-}
+    <>
+      <Header />
+      <ToastContainer />
+      <Container className='my-2'>
+        <Outlet />
+      </Container>
+    </>
+  );
+};
 
-export default App
+export default App;
